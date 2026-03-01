@@ -11,9 +11,9 @@ permalink: /projects/
 
 <div class="grid">
   {% for p in site.data.projects %}
-    <div class="card">
+    <a class="card" href="{{ p.url | relative_url }}">
       <img src="{{ p.cover | relative_url }}" alt="{{ p.title }}">
-      <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+      <h3>{{ p.title }}</h3>
       <p>{{ p.subtitle }}</p>
 
       {% if p.metrics %}
