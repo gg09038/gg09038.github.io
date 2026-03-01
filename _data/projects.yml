@@ -44,7 +44,7 @@
   title: "國民法官最佳助手（Local LLM + RAG）"
   subtitle: "法律 Q&A / 摘要 / 判決預測（可離線、可更新）"
   cover: "/assets/img/project-rag.svg"
-  url: "/projects/juror-assistant/"
+  url: "/projects/juror-rag/"
   tags: ["RAG", "Local LLM", "Prompt", "Data Pipeline"]
   metrics:
     - label: "Mode"
