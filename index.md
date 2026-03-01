@@ -1,9 +1,9 @@
 ---
-title: "Yang Zong-Yan | Portfolio"
+title: "Yang Tsung-yen | Portfolio"
 layout: default
 ---
 
-<di:contentReference[oaicite:7]{index=7}>楊宗諺（Yang Zong-Yan）</h1>
+<di:contentReference[oaicite:7]{index=7}>楊宗諺（Yang Tsung-yen）</h1>
   <p>影像演算法 / 電腦視覺 / 邊緣 AI｜國立臺灣科技大學 電機碩士</p>
 
   <div class="badges">
