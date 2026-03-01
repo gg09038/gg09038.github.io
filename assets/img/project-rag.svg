@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#0B1226"/>
+  <rect x="110" y="130" width="980" height="440" rx="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/>
+  <text x="160" y="240" fill="white" font-size="44" font-family="ui-sans-serif,system-ui">Local LLM + RAG</text>
+  <text x="160" y="300" fill="rgba(255,255,255,.75)" font-size="22" font-family="ui-sans-serif,system-ui">
+    QA • Summary • Prediction (Private / Offline)
+  </text>
+  <circle cx="240" cy="430" r="90" fill="#7CDAFF" opacity=".18"/>
+  <circle cx="420" cy="430" r="90" fill="#C58BFF" opacity=".16"/>
+  <circle cx="600" cy="430" r="90" fill="white" opacity=".06"/>
+  <path d="M690 430h260" stroke="rgba(255,255,255,.25)" stroke-width="10" stroke-linecap="round"/>
+</svg>
