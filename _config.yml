@@ -1,0 +1,15 @@
+title: "Yang Zong-Yan | Portfolio"
+description: "影像演算法 / 電腦視覺 / 邊緣 AI"
+url: "https://gg09038.github.io"   # 若你不是 user page，可先留空或改成你的網址
+baseurl: ""                        # 若是 project page（/repo/），這裡要填 "/repo"
+markdown: kramdown
+permalink: pretty
+
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
