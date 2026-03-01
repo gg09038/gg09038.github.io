@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="project-hero">
+  <div class="top">
+    <img src="{{ page.hero | default: '/assets/img/hero-bg.svg' | relative_url }}" alt="">
+    <div>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="meta">{{ page.subtitle }}</p>{% endif %}
+      {% if page.tags %}
+      <div class="tags">
+        {% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if page.metrics %}
+  <div class="metrics">
+    {% for m in page.metrics %}
+      <div class="metric">
+        <div class="k">{{ m.label }}</div>
+        <div class="v">{{ m.value }}</div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+<div class="content">
+  {{ content }}
+</div>
