@@ -37,13 +37,6 @@ body{
   filter: saturate(1.2);
 }
 
-.card h3 a{
-  text-decoration: none;
-}
-.card h3 a:hover{
-  text-decoration: underline;
-}
-
 a{ color:var(--text); text-decoration:none; }
 a:hover{ color:white; }
 .container{ width:min(var(--max), calc(100% - 2*var(--pad))); margin: 0 auto; }
