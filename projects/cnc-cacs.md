@@ -1,25 +1,73 @@
 ---
-title: "CNC 工具機鐵屑清潔度監控（CACS 2024 第一作者）"
-layout: project
+title: "CNC 工具機鐵屑清潔度監控（CACS 2024）"
 permalink: /projects/cnc-cacs/
-subtitle: "影:contentReference[oaicite:11]{index=11}控介面"
-hero: /assets/img/project-cnc.svg
-tags: ["Industrial CV", "OpenCV", "Embedded Control", "System Integration"]
-metrics:
-  - label: "Prototype"
-    value: "End-to-end integration"
-  - label: "Robustness"
-    value: "Noise/Reflection"
-  - label: "Output"
-    value: "Dashboard + Control"
 ---
 
-## Overview
-完成「影像判定 → 清潔決策 → 硬體控制 → 監控介面」整合原型。
+# CNC 工具機鐵屑清潔度監控（CACS 2024）
+> **Problem → Method → Experiments → Results → Demo/Repo**
 
-## Key points
-- 在雜訊/反光/環境變動下設計耐用影像處理流程
-- 把辨識結果轉為可執行的清潔控制（致動器/流程）
+**一句話摘要**：把「鐵屑影像辨識」接到「噴嘴/水閥硬體控制」，完成影像判定→清潔決策→自動沖洗→介面監控的一條龍原型。
 
-## Figures
-- 建議放：系統流程圖、監控介面截圖、清潔曲線（before/after）
+---
+
+## Problem（問題）
+CNC 加工環境鐵屑堆積會影響加工品質與安全。傳統人工清潔成本高、停機時間長；若能自動化「判定需要清潔的位置」並驅動硬體執行沖洗，可降低維護成本並提升產線效率。
+
+---
+
+## Method（方法）
+### 1) 系統架構（Vision → Decision → Actuation）
+- 改良噴嘴：使用 **3D 列印通用噴嘴**，並以 **兩顆伺服馬達**控制噴嘴方向，讓沖洗能覆蓋整個 CNC 內部範圍。
+- 影像辨識：在反光/雜訊下，以「邊緣/遮罩」策略避免亮面干擾，最後用 **非黑色像素佔比**估計鐵屑量（chip ratio）。
+- 清潔策略：畫面切成多個區塊，挑選鐵屑佔比最高的區塊作為下一個清潔目標，重複直到低於閾值。
+
+> 圖：系統總流程 / 架構圖（建議你截報告中的系統圖放這裡）  
+![](/assets/img/projects/cnc/overview.png)
+
+### 2) 影像處理：chip ratio 計算（耐反光）
+（示意寫法，方便你當作品集說明）
+1. 取 ROI / mask 排除固定背景與高亮區域  
+2. 邊緣偵測（例如 Canny）輔助定位可疑鐵屑區  
+3. 統計 ROI 內「非黑像素」比例 → chip ratio（%）
+
+> 圖：原圖 / mask / 邊緣 / 結果疊圖  
+![](/assets/img/projects/cnc/pipeline.png)
+
+### 3) 控制與定位（伺服 + 雷射定位 + 水閥）
+- 以雷射點作為定位回授：比較「雷射點座標」與「目標區塊座標」，差值轉成伺服控制訊號，直到落在容許誤差內再開水閥沖洗。
+- 為避免機構晃動造成「盤旋、對不到點」，加入容許誤差與提前停下的規則。
+
+---
+
+## Experiments（實驗）
+### 設定
+- 將畫面切成 **12 區塊**，並設定清潔度閾值（例：區塊鐵屑占比 < 1%）
+
+### 測試方式
+- 使用影片做流程驗證（先驗證判定/決策流程）
+- 以鋁箔紙球模擬鐵屑，進行真實沖洗流程測試（含噴嘴移動與水閥控制）
+
+---
+
+## Results（結果）
+三次完整清潔流程的「時間 / 清潔前後鐵屑佔比」如下（% 越低越乾淨）：
+
+| Trial | Time (s) | Before | After |
+|------:|---------:|-------:|------:|
+| 1 | 157 | 10.76% | 2.51% |
+| 2 | 201 | 24.48% | 4.66% |
+| 3 | 191 | 17.94% | 2.54% |
+
+> 圖：每次清潔過程的趨勢圖（建議把你報告內的曲線截圖放這裡）  
+![](/assets/img/projects/cnc/curve.png)
+
+### 已知限制（作品集寫法很加分）
+- 鐵屑占比降到 10% 以下後清潔效率會下降，原因與「以區塊為目標」而非「以鐵屑個體為目標」有關，會出現區塊間殘留。
+- 雷射點與目標座標無法完全重疊時，需用容許誤差/停下規則換取穩定性（但會犧牲一點沖洗精度）。
+
+---
+
+## Demo / Repo
+- Demo：*（若你有影片/展示照片連結，放這裡）*
+- Repo：*（若可公開，放這裡）*
+- Paper：*（若你要放 CACS 2024 citation，可放這裡）*
