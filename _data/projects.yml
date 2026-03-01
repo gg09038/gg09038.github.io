@@ -1,0 +1,83 @@
+- id: dvc
+  title: "Deep Video Compression（碩論）"
+  subtitle: "RD Range Expansion + Quality/Feature Modulation"
+  cover: "/assets/img/project-dvc.svg"
+  url: "/projects/dvc/"
+  tags: ["DVC", "RD", "Quality Modulation", "Long-seq"]
+  metrics:
+    - label: "Avg BD-Rate"
+      value: "-49.95%"
+    - label: "Avg BD-PSNR"
+      value: "+3.122 dB"
+    - label: "Test sets"
+      value: "HEVC B/C/D/E + UVG"
+
+- id: cnc
+  title: "CNC 工具機鐵屑清潔度監控（CACS 2024）"
+  subtitle: "影像判定 → 清潔決策 → 硬體控制 → 監控介面"
+  cover: "/assets/img/project-cnc.svg"
+  url: "/projects/cnc-cacs/"
+  tags: ["Industrial CV", "OpenCV", "Embedded", "System"]
+  metrics:
+    - label: "Pipeline"
+      value: "CV→Decision→Control"
+    - label: "Output"
+      value: "Dashboard + Control"
+    - label: "Focus"
+      value: "Noise/Reflection robust"
+
+- id: kl730
+  title: "KL730 邊緣裝置：RGB + Thermal 疊合對齊"
+  subtitle: "Homography / Perspective Transform + ToF distance"
+  cover: "/assets/img/project-kl730.svg"
+  url: "/projects/kl730-fusion/"
+  tags: ["Edge AI", "Thermal-RGB", "Homography", "Calibration"]
+  metrics:
+    - label: "Device"
+      value: "KL730"
+    - label: "Sensors"
+      value: "RGB + Thermal + ToF"
+    - label: "Output"
+      value: "Fused view + Web control"
+
+- id: rag
+  title: "國民法官最佳助手（Local LLM + RAG）"
+  subtitle: "法律 Q&A / 摘要 / 判決預測（可離線、可更新）"
+  cover: "/assets/img/project-rag.svg"
+  url: "/projects/juror-assistant/"
+  tags: ["RAG", "Local LLM", "Prompt", "Data Pipeline"]
+  metrics:
+    - label: "Mode"
+      value: "Local + Private"
+    - label: "Core"
+      value: "RAG + Prompting"
+    - label: "Tasks"
+      value: "QA / Summary / Predict"
+
+- id: coscop
+  title: "藥妝品廣告詞違規檢測（獲獎）"
+  subtitle: "文案 → 違規類型 → 可解釋輸出"
+  cover: "/assets/img/project-coscop.svg"
+  url: "/projects/coscop/"
+  tags: ["NLP", "Explainable", "RegTech", "Web API"]
+  metrics:
+    - label: "Result"
+      value: "Final + Award"
+    - label: "Output"
+      value: "Explainable labels"
+    - label: "Stack"
+      value: "API + UI"
+
+- id: rtos
+  title: "RTOS（μC/OS-II）排程演算法實作"
+  subtitle: "RM/EDF/FIFO + NPCS/CPP，輸出 response/preemption/miss"
+  cover: "/assets/img/project-rtos.svg"
+  url: "/projects/rtos-scheduler/"
+  tags: ["RTOS", "Scheduling", "Kernel", "Real-time"]
+  metrics:
+    - label: "Schedulers"
+      value: "RM / EDF / FIFO"
+    - label: "Metrics"
+      value: "Response/Preempt/Miss"
+    - label: "Level"
+      value: "Kernel-level"
