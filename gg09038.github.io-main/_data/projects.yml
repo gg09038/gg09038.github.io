@@ -1,0 +1,120 @@
+- id: dvc
+  title: 深度學習式多碼率視訊壓縮系統
+  subtitle: 碩士論文｜單一模型多碼率、全鏈路尺度調變、多源先驗與長鏈穩定化
+  cover: /assets/img/project-dvc.svg
+  url: /projects/dvc/
+  category: AI / Research
+  tags:
+  - PyTorch
+  - Deep Video Compression
+  - Entropy Model
+  - Rate-Distortion
+  - Multi-Rate
+  metrics:
+  - label: P-frame BD-rate vs. HEVC
+    value: -44.91%
+  - label: All-frame BD-rate vs. HEVC
+    value: -37.73%
+  - label: PSNR operating range
+    value: +2.39–2.61 dB
+  period: 2025.03 — 2026.08
+- id: kl730
+  title: 多模態 RGB/IR 即時影像融合系統
+  subtitle: 產學合作｜ToF 深度索引 Homography + KL730 嵌入式部署 + AI 物件辨識
+  cover: /assets/img/projects/kl730/rgbir-ai.png
+  url: /projects/kl730-fusion/
+  category: Embedded AI
+  tags:
+  - Computer Vision
+  - RGB/IR Fusion
+  - Homography
+  - ToF
+  - KL730
+  metrics:
+  - label: Platform
+    value: KL730
+  - label: Sensors
+    value: RGB + Thermal + ToF
+  - label: Deployment
+    value: Real-time Embedded
+  period: 2025.01 — 2026.01
+- id: rtos
+  title: μC/OS-II 即時排程與核心層實作
+  subtitle: Kernel-level scheduler、TCB、deadline handling、resource protocol
+  cover: /assets/img/project-rtos.svg
+  url: /projects/rtos-scheduler/
+  category: Embedded / System
+  tags:
+  - RTOS
+  - C
+  - μC/OS-II
+  - Scheduler
+  - Kernel
+  metrics:
+  - label: Schedulers
+    value: RM / FIFO / EDF / CUS
+  - label: Protocols
+    value: NPCS / CPP
+  - label: Level
+    value: Kernel-level
+  period: 2025 Spring
+- id: cnc
+  title: CNC 工具機智慧鐵屑清潔監控系統
+  subtitle: 大學專題｜電腦視覺 × Arduino × 伺服控制 × 即時監控
+  cover: /assets/img/project-cnc.svg
+  url: /projects/cnc-cacs/
+  category: Computer Vision
+  tags:
+  - Computer Vision
+  - OpenCV
+  - Python
+  - Arduino
+  - Servo Control
+  metrics:
+  - label: Output
+    value: IEEE paper
+  - label: Pipeline
+    value: Vision → Control
+  - label: Prototype
+    value: End-to-end
+  period: 2023.01 — 2024.06
+- id: rag
+  title: 基於本地語言模型之司法判決預測
+  subtitle: 課堂專案｜Local LLM + RAG + Prompt Engineering
+  cover: /assets/img/project-rag.svg
+  url: /projects/juror-rag/
+  category: Generative AI
+  tags:
+  - Local LLM
+  - TAIDE
+  - RAG
+  - Prompt Engineering
+  - Data Pipeline
+  metrics:
+  - label: Mode
+    value: Local / Private
+  - label: Core
+    value: RAG
+  - label: Domain
+    value: Legal AI
+  period: 2024.10 — 2025.01
+- id: coscop
+  title: 藥妝品廣告詞違規檢測系統
+  subtitle: 2023 法律科技競賽｜可解釋規則/語意建模 + API + Web UI
+  cover: /assets/img/project-coscop.svg
+  url: /projects/coscop/
+  category: NLP / Software
+  tags:
+  - NLP
+  - API
+  - Database
+  - Web UI
+  - RegTech
+  metrics:
+  - label: Random test
+    value: 50 samples
+  - label: Success rate
+    value: '> 90%'
+  - label: Output
+    value: Working prototype
+  period: 2023.01 — 2023.09

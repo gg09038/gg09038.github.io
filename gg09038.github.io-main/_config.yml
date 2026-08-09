@@ -1,0 +1,15 @@
+title: "Tsung-Yen Yang | Portfolio"
+description: "Deep Learning / Computer Vision / Embedded AI / RTOS"
+url: "https://gg09038.github.io"
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+
+kramdown:
+  input: GFM
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

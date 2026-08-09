@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#0B1226"/>
+  <rect x="110" y="130" width="980" height="440" rx="28" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.14)"/>
+  <text x="160" y="240" fill="white" font-size="44" font-family="ui-sans-serif,system-ui">RTOS Scheduling (μC/OS-II)</text>
+  <text x="160" y="300" fill="rgba(255,255,255,.75)" font-size="22" font-family="ui-sans-serif,system-ui">
+    RM / EDF / FIFO • Kernel-level • Metrics output
+  </text>
+  <path d="M180 430h840" stroke="rgba(255,255,255,.18)" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="320" cy="430" r="26" fill="#7CDAFF" opacity=".9"/>
+  <circle cx="560" cy="430" r="26" fill="#C58BFF" opacity=".85"/>
+  <circle cx="820" cy="430" r="26" fill="white" opacity=".6"/>
+</svg>
