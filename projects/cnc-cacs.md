@@ -1,73 +1,44 @@
 ---
-title: "CNC 工具機鐵屑清潔度監控（CACS 2024）"
+layout: project
+title: "CNC 工具機智慧鐵屑清潔監控系統"
+kicker: "Undergraduate Capstone · Computer Vision"
+subtitle: "Image recognition, automatic nozzle control and real-time monitoring for CNC chip cleaning"
+hero: "/assets/img/project-cnc.svg"
+tags: ["Computer Vision", "OpenCV", "Python", "Arduino", "Servo Control"]
+metrics:
+  - label: "System"
+    value: "Vision → Decision → Control"
+  - label: "Prototype"
+    value: "Automatic cleaning"
+  - label: "Research output"
+    value: "IEEE paper"
 permalink: /projects/cnc-cacs/
 ---
 
-# CNC 工具機鐵屑清潔度監控（CACS 2024）
-> **Problem → Method → Experiments → Results → Demo/Repo**
+# CNC 工具機智慧鐵屑清潔監控系統
 
-**一句話摘要**：把「鐵屑影像辨識」接到「噴嘴/水閥硬體控制」，完成影像判定→清潔決策→自動沖洗→介面監控的一條龍原型。
+> **一句話摘要**：利用影像處理判斷 CNC 機台內鐵屑分布與清潔優先順序，再以 Arduino、伺服馬達與自製噴嘴完成自動清潔與監控。
 
----
+## System Pipeline
 
-## Problem（問題）
-CNC 加工環境鐵屑堆積會影響加工品質與安全。傳統人工清潔成本高、停機時間長；若能自動化「判定需要清潔的位置」並驅動硬體執行沖洗，可降低維護成本並提升產線效率。
+1. 相機擷取 CNC 內部影像。
+2. 使用 OpenCV、Canny edge detection、mask 與 contour 等方法分析鐵屑分布。
+3. 將畫面分區並計算各區鐵屑占比，選擇清潔優先區域。
+4. 使用雷射光點作為噴嘴定位回授。
+5. Python 透過 serial communication 控制 Arduino Mega2560。
+6. 雙軸伺服馬達控制噴嘴移動，對準後啟動水閥清潔。
+7. Node-RED + MySQL 顯示與紀錄清潔狀態。
 
----
+## Engineering Experience
 
-## Method（方法）
-### 1) 系統架構（Vision → Decision → Actuation）
-- 改良噴嘴：使用 **3D 列印通用噴嘴**，並以 **兩顆伺服馬達**控制噴嘴方向，讓沖洗能覆蓋整個 CNC 內部範圍。
-- 影像辨識：在反光/雜訊下，以「邊緣/遮罩」策略避免亮面干擾，最後用 **非黑色像素佔比**估計鐵屑量（chip ratio）。
-- 清潔策略：畫面切成多個區塊，挑選鐵屑佔比最高的區塊作為下一個清潔目標，重複直到低於閾值。
+此專題同時涉及影像辨識、機構、嵌入式控制與監控介面，因此除了完成單一模組外，也需要與組員持續確認介面、定位誤差與實驗結果。實作過程中處理了水花反光誤判、噴嘴盤旋、機構晃動與水柱落點偏差等實際工程問題。
 
-> 圖：系統總流程 / 架構圖（建議你截報告中的系統圖放這裡）  
-![](/assets/img/projects/cnc/overview.png)
+## Results
 
-### 2) 影像處理：chip ratio 計算（耐反光）
-（示意寫法，方便你當作品集說明）
-1. 取 ROI / mask 排除固定背景與高亮區域  
-2. 邊緣偵測（例如 Canny）輔助定位可疑鐵屑區  
-3. 統計 ROI 內「非黑像素」比例 → chip ratio（%）
+完成可自動判斷待清潔區域、控制噴嘴沖洗並即時監控鐵屑占比的系統原型。三次完整測試中，系統皆能將初始鐵屑占比顯著降低。
 
-> 圖：原圖 / mask / 邊緣 / 結果疊圖  
-![](/assets/img/projects/cnc/pipeline.png)
+## Publication
 
-### 3) 控制與定位（伺服 + 雷射定位 + 水閥）
-- 以雷射點作為定位回授：比較「雷射點座標」與「目標區塊座標」，差值轉成伺服控制訊號，直到落在容許誤差內再開水閥沖洗。
-- 為避免機構晃動造成「盤旋、對不到點」，加入容許誤差與提前停下的規則。
+[A Monitoring and Control System Based on Image Recognition for Iron Filings Cleaning of CNC Machine Tools](https://ieeexplore.ieee.org/document/10773234)
 
----
-
-## Experiments（實驗）
-### 設定
-- 將畫面切成 **12 區塊**，並設定清潔度閾值（例：區塊鐵屑占比 < 1%）
-
-### 測試方式
-- 使用影片做流程驗證（先驗證判定/決策流程）
-- 以鋁箔紙球模擬鐵屑，進行真實沖洗流程測試（含噴嘴移動與水閥控制）
-
----
-
-## Results（結果）
-三次完整清潔流程的「時間 / 清潔前後鐵屑佔比」如下（% 越低越乾淨）：
-
-| Trial | Time (s) | Before | After |
-|------:|---------:|-------:|------:|
-| 1 | 157 | 10.76% | 2.51% |
-| 2 | 201 | 24.48% | 4.66% |
-| 3 | 191 | 17.94% | 2.54% |
-
-> 圖：每次清潔過程的趨勢圖（建議把你報告內的曲線截圖放這裡）  
-![](/assets/img/projects/cnc/curve.png)
-
-### 已知限制（作品集寫法很加分）
-- 鐵屑占比降到 10% 以下後清潔效率會下降，原因與「以區塊為目標」而非「以鐵屑個體為目標」有關，會出現區塊間殘留。
-- 雷射點與目標座標無法完全重疊時，需用容許誤差/停下規則換取穩定性（但會犧牲一點沖洗精度）。
-
----
-
-## Demo / Repo
-- Demo：*（若你有影片/展示照片連結，放這裡）*
-- Repo：*（若可公開，放這裡）*
-- Paper：*（若你要放 CACS 2024 citation，可放這裡）*
+相關成果後續完成 IEEE 論文發表。

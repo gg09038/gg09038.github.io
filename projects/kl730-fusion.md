@@ -1,76 +1,56 @@
 ---
-title: "KL730：RGB + Thermal 疊合對齊（ToF 輔助）"
+layout: project
+title: "多模態 RGB/IR 即時影像融合系統"
+kicker: "Industry Collaboration · Embedded AI"
+subtitle: "Depth-indexed Homography for RGB/Thermal alignment with ToF sensing and KL730 deployment"
+hero: "/assets/img/projects/kl730/rgbir-ai.png"
+tags: ["Computer Vision", "RGB/IR Fusion", "Homography", "ToF", "KL730", "C++"]
+metrics:
+  - label: "Platform"
+    value: "KL730"
+  - label: "Input"
+    value: "RGB + Thermal + ToF"
+  - label: "Output"
+    value: "Real-time fused view"
 permalink: /projects/kl730-fusion/
 ---
 
-# KL730：RGB + Thermal 疊合對齊（ToF 輔助）
-> **Problem → Method → Experiments → Results → Demo/Repo**
+# 多模態 RGB/IR 即時影像融合系統
 
-**一句話摘要**：在 KL730 邊緣裝置上整合 RGB/熱像/ToF，多距離資料蒐集 + Homography 對齊，做到可疊合顯示、可操作微調、可遠端控制、並加入熱點/拍照/YOLO 物件辨識。
+> **一句話摘要**：在未知相機內外參條件下，以 ToF 距離作為索引動態選擇 Homography，實現多景深 RGB/熱像即時對位，並部署於 KL730 邊緣裝置。
 
----
+## Problem
 
-## Problem（問題）
-RGB 與熱像相機視角/鏡頭/畸變不同，直接疊合會錯位；而邊緣裝置資源有限，需要一個「計算量合理、可在多場景穩定運作」的對齊與展示流程，並提供使用者操作介面（按鍵/搖桿/網頁）。
+RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接疊合會產生視差錯位；而單一固定 Homography 只對特定距離有效，物體景深改變後對位品質會明顯下降。
 
----
+## Method
 
-## Method（方法）
-### 1) 硬體整合（多源輸入）
-- Kneron Pi（KL730）  
-- Broadcom ToF 距離感測（0.5m ~ 30m）  
-- Obsidian 熱像相機（680×480）  
-- IMX219 RGB 相機（最高到 3840×2160；常用 1920×1080 / 680×480）
+1. 在多個前景距離蒐集成對 RGB / Thermal 影像。
+2. 於各距離標定跨模態對應點，直接估算該距離的 Homography Matrix。
+3. 將各距離矩陣建立成深度索引表。
+4. 系統運作時利用 **ToF** 即時量測距離，選擇對應的投影映射矩陣。
+5. 完成透視轉換、影像融合與顯示，並整合 AI 物件辨識。
 
-> 圖：系統架構/接線示意  
-![](/assets/img/projects/kl730/system.png)
+![RGB/IR/ToF 系統流程](/assets/img/projects/kl730/fusion-flow.png)
 
-### 2) 影像校正與疊合（Fisheye → Homography）
-- 熱像端先做魚眼校正（必要時）  
-- 以 **透視轉換 / Homography（3×3）** 做平面對齊  
-- **多距離資料蒐集**：不同距離下標記配對點，生成對應距離的矩陣表  
-- 由 ToF 提供單點距離，系統依距離選擇對應矩陣（提升穩定性）
+## Embedded Deployment
 
-> 圖：資料蒐集 → 標記 → 匯入矩陣 → 系統依距離套用  
-![](/assets/img/projects/kl730/calibration_pipeline.png)
+系統進一步移植到 **Kneron KL730** 邊緣運算平台，整合：
 
-### 3) 使用者操作與功能
-- 疊合影像微調（搖桿上下左右；可重置）
-- IR 顯示風格（六種色彩）
-- 疊合透明度（五檔）
-- 熱點偵測
-- 自訂秒數儲存影像 / 拍照
-- AI 物件辨識（YOLO：顯示物件名稱與信心度）
-- 多重影像輸出模式（顯示/傳輸）
-- 遠端網頁控制（Web UI）
+- RGB Camera / Thermal Camera 影像輸入
+- ToF 距離量測
+- Homography-based alignment
+- RGB/IR Alpha Blending
+- AI Object Detection
+- 外部控制與顯示介面
 
-> 圖：UI / 操作流程截圖  
-![](/assets/img/projects/kl730/ui.png)
+## Engineering Challenges
 
----
+- 處理 RGB 與 IR 視角差異、尺度差異與多距離視差。
+- 將 Python 原型邏輯轉換至嵌入式 C/C++ 流程。
+- 配合邊緣裝置的運算資源、影像 buffer 與即時顯示限制重新整理資料流。
+- 對齊影像處理、AI inference、ToF 與 UI 控制等多個模組介面。
 
-## Experiments（實驗）
-### 資料蒐集與標記
-- 選擇與環境有溫差、邊緣清晰的標記物  
-- 量測多個距離（最遠距離依需求設定）  
-- 將對應距離的資料匯入工具標記，產生 Homography 表
+## Result
 
-### 功能驗證
-- 室內場景、室外/動態場景：驗證疊合穩定度、操作流程、遠端控制、YOLO 顯示等。
-
----
-
-## Results（結果）
-- 完成 KL730 上的「多源影像輸入 → 校正/疊合 → 顯示/傳輸 → UI 操作」整合
-- 功能包含：微調、色彩/透明度、熱點、拍照、自訂儲存秒數、YOLO、遠端網頁控制等
-
-> 圖：疊合結果（建議放 2–3 張：室內 + 室外 + 動態）  
-![](/assets/img/projects/kl730/result_indoor.png)  
-![](/assets/img/projects/kl730/result_outdoor.png)
-
----
-
-## Demo / Repo
-- Demo（室內）：https://youtu.be/AROkHkRmdvg  
-- Demo（室外/動態）：https://youtu.be/cx5LC9ij29A  
-- Repo：*（若可公開放這裡）*
+完成從資料蒐集、跨模態標定、深度索引矩陣建立，到 KL730 即時融合與 AI 辨識的完整系統原型。此專案讓我進一步理解演算法從 PC 開發環境走向實際嵌入式硬體時的效能、介面與資料流限制。

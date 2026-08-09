@@ -1,54 +1,157 @@
 ---
-title: "Yang Tsung-yen | Portfolio"
+title: "楊宗諺 Tsung-Yen Yang | Portfolio"
 layout: default
 ---
 
-<di:contentReference[oaicite:7]{index=7}>楊宗諺（Yang Tsung-yen）</h1>
-  <p>影像演算法 / 電腦視覺 / 邊緣 AI｜國立臺灣科技大學 電機碩士</p>
-
-  <div class="badges">
-    <span class="badge">C/C++</span>
-    <span class="badge">Python</span>
-    <span class="badge">OpenCV</span>
-    <span class="badge">Edge AI</span>
-    <span class="badge">Deep Video Compression</span>
+<section class="hero-modern">
+  <div class="hero-copy">
+    <div class="eyebrow">M.S. in Electrical Engineering · NTUST</div>
+    <h1>楊宗諺 <span>Tsung-Yen Yang</span></h1>
+    <p class="hero-lead">
+      專注於 <strong>深度學習、電腦視覺與嵌入式系統</strong>。研究經歷涵蓋深度視訊壓縮、
+      RGB/IR 多模態影像融合、Edge AI 部署與即時作業系統核心層實作。
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ '/projects/' | relative_url }}">查看專案</a>
+      <a class="btn" href="mailto:as0903817384@gmail.com">聯絡我</a>
+      <a class="btn ghost" href="https://github.com/gg09038" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+    <div class="hero-chips">
+      <span>Algorithm</span><span>Computer Vision</span><span>Embedded AI</span><span>RTOS</span>
+    </div>
   </div>
 
-  <p class="muted" style="margin-top:14px">
-    Email：as0903817384@gmail.com ｜ GitHub：gg09038 ｜ Pages：gg09038.github.io
-  </p>
-</div>
+  <aside class="hero-panel">
+    <div class="profile-monogram">TY</div>
+    <div class="profile-title">工程型研究者</div>
+    <p>從模型研究、系統整合到硬體部署，習慣以資料流與實驗驗證定位問題。</p>
+    <dl class="quick-facts">
+      <div><dt>Education</dt><dd>NTUST EE M.S.</dd></div>
+      <div><dt>Background</dt><dd>Automatic Control</dd></div>
+      <div><dt>Focus</dt><dd>AI / CV / Embedded</dd></div>
+    </dl>
+  </aside>
+</section>
 
-<div class="section-title">Featured Projects</div>
-<div class="grid">
-  {% assign featured = site.data.projects | slice: 0, 3 %}
-  {% for p in featured %}
-    <a class="card" href="{{ p.url | relative_url }}">
-      <img src="{{ p.cover | relative_url }}" alt="{{ p.title }}">
-      <h3>{{ p.title }}</h3>
-      <p>{{ p.subtitle }}</p>
-      <div class="tags">
-        {% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+<section class="impact-strip" aria-label="portfolio highlights">
+  <div><span class="impact-number">44.91%</span><span class="impact-label">P-frame 平均碼率節省<br>vs. HEVC</span></div>
+  <div><span class="impact-number">+2.39–2.61 dB</span><span class="impact-label">單一模型 PSNR<br>操作範圍拓展</span></div>
+  <div><span class="impact-number">IEEE</span><span class="impact-label">大學專題成果<br>論文發表</span></div>
+  <div><span class="impact-number">Kernel</span><span class="impact-label">μC/OS-II<br>排程器實作</span></div>
+</section>
+
+<section id="about" class="section-block two-col">
+  <div>
+    <div class="section-kicker">ABOUT</div>
+    <h2>從演算法到系統部署</h2>
+  </div>
+  <div class="about-copy">
+    <p>
+      我畢業於逢甲大學自動控制工程學系，目前就讀國立臺灣科技大學電機工程研究所。
+      大學期間從自動控制與嵌入式系統出發，逐步接觸電腦視覺與影像處理；研究所則進一步投入深度學習式視訊壓縮研究。
+    </p>
+    <p>
+      我習慣從整體系統角度理解問題。無論是模型訓練異常、跨模態影像錯位，或 RTOS 排程行為，
+      都會先拆解資料流與模組介面，再透過中間結果與對照實驗逐步定位原因。
+      團隊專案與產學合作也讓我學習到：完成自己的模組之外，更需要理解其他子系統的限制並共同整合。
+    </p>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <div><div class="section-kicker">EDUCATION</div><h2>學歷與研究方向</h2></div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024.09 — 2026.09</div>
+      <div class="timeline-content">
+        <h3>國立臺灣科技大學 · 電機工程系碩士班</h3>
+        <p>深度視訊壓縮、深度學習、影像處理、嵌入式作業系統實作。</p>
       </div>
-    </a>
-  {% endfor %}
-</div>
-
-<div class="section-title">Highlights</div>
-<div class="grid">
-  <div class="card" style="grid-column: span 12;">
-    <h3 style="margin-top:0">我在做什麼？</h3>
-    <p class="muted">
-      目前聚焦深度視訊壓縮（DVC）：拓展 RD 操作範圍、並抑制長序列誤差傳播。
-      初步結果：Avg BD-Rate -49.95%、Avg BD-PSNR +3.122 dB。
-    </p>
-    <p class="muted">
-      我也做工業視覺整合（CNC 鐵屑清潔監控）、Edge AI 多感測器疊合（RGB+Thermal+ToF）、以及本地 RAG 法律助手。
-    </p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2020.09 — 2024.06</div>
+      <div class="timeline-content">
+        <h3>逢甲大學 · 自動控制工程學系</h3>
+        <p>自動控制、電腦視覺、嵌入式控制與系統整合；大學專題成果完成 IEEE 論文發表。</p>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="section-title">Next</div>
-<p class="muted">
-  👉 前往 <a href="{{ '/projects/' | relative_url }}">Projects</a> 看每個專案的數據、圖片、與 demo。
-</p>
+<section id="skills" class="section-block">
+  <div class="section-heading">
+    <div><div class="section-kicker">SKILLS</div><h2>核心能力</h2></div>
+  </div>
+  <div class="skill-grid">
+    <div class="skill-card">
+      <h3>AI / Model</h3>
+      <p>PyTorch · Deep Learning · Deep Video Compression · Entropy Modeling · Rate-Distortion Optimization</p>
+    </div>
+    <div class="skill-card">
+      <h3>Computer Vision</h3>
+      <p>OpenCV · Image Processing · RGB/IR Fusion · Homography · ToF · Object Detection</p>
+    </div>
+    <div class="skill-card">
+      <h3>Embedded / System</h3>
+      <p>C/C++ · μC/OS-II · RTOS Scheduler · Arduino · Serial Communication · Edge AI</p>
+    </div>
+    <div class="skill-card">
+      <h3>Engineering Workflow</h3>
+      <p>Python · Git · Linux · Experiment Design · Systematic Debugging · Data-driven Validation</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-heading">
+    <div><div class="section-kicker">FEATURED WORK</div><h2>精選專案</h2></div>
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">查看全部專案 →</a>
+  </div>
+  <div class="project-grid">
+    {% assign featured_ids = "dvc,kl730,rtos,cnc" | split: "," %}
+    {% for id in featured_ids %}
+      {% assign p = site.data.projects | where: "id", id | first %}
+      <a class="project-card" href="{{ p.url | relative_url }}">
+        <div class="project-media"><img src="{{ p.cover | relative_url }}" alt="{{ p.title }}"></div>
+        <div class="project-card-body">
+          <div class="project-meta-line"><span class="project-category">{{ p.category }}</span><span class="project-period">{{ p.period }}</span></div>
+          <h3>{{ p.title }}</h3>
+          <p>{{ p.subtitle }}</p>
+          <div class="tags compact">
+            {% for t in p.tags limit:4 %}<span class="tag">{{ t }}</span>{% endfor %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="publication" class="section-block">
+  <div class="section-heading">
+    <div><div class="section-kicker">PUBLICATION</div><h2>研究成果</h2></div>
+  </div>
+  <a class="publication-card" href="https://ieeexplore.ieee.org/document/10773234" target="_blank" rel="noopener">
+    <div class="pub-index">01</div>
+    <div class="pub-content">
+      <h3>A Monitoring and Control System Based on Image Recognition for Iron Filings Cleaning of CNC Machine Tools</h3>
+      <p>大學專題延伸成果 · IEEE Xplore</p>
+    </div>
+    <div class="pub-arrow">↗</div>
+  </a>
+</section>
+
+<section class="section-block contact-block">
+  <div>
+    <div class="section-kicker">CONTACT</div>
+    <h2>對演算法、電腦視覺與嵌入式軟體職缺有興趣</h2>
+    <p>希望將研究階段累積的模型開發、問題分析與系統整合能力，投入實際產品與工程開發。</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn primary" href="mailto:as0903817384@gmail.com">Email</a>
+    <a class="btn" href="https://github.com/gg09038" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>

@@ -1,49 +1,51 @@
 ---
-title: "RTOS（μC/OS-II）排程演算法實作"
+layout: project
+title: "μC/OS-II 即時排程與核心層實作"
+kicker: "Course Project · Embedded OS"
+subtitle: "Kernel-level scheduler modification, TCB tracing, deadline handling and resource protocols"
+hero: "/assets/img/project-rtos.svg"
+tags: ["RTOS", "C", "μC/OS-II", "Scheduler", "Kernel", "Real-time"]
+metrics:
+  - label: "Schedulers"
+    value: "RM / FIFO / EDF / CUS"
+  - label: "Protocols"
+    value: "NPCS / CPP"
+  - label: "Implementation"
+    value: "Kernel-level"
 permalink: /projects/rtos-scheduler/
 ---
 
-# RTOS（μC/OS-II）排程演算法實作
-> **Problem → Method → Experiments → Results → Demo/Repo**
+# μC/OS-II 即時排程與核心層實作
 
-**一句話摘要**：在 μC/OS-II 做 kernel-level scheduler 改寫，實作 RM/EDF/FIFO 與 NPCS/CPP，並輸出 response/preemption/blocking/miss deadline 指標來驗證行為。
+> **一句話摘要**：直接修改 μC/OS-II 核心層程式碼，實作與分析多種即時排程器、deadline handling、TCB linked list 與共享資源協定。
 
----
+## Scope
 
-## Problem（問題）
-即時系統要在 deadline 約束下穩定排程，當 task 共享資源、存在 priority inversion 或臨界區時，排程策略（RM/EDF/FIFO）與資源協定（NPCS/CPP）會直接影響可排程性與 deadline miss 率。目標是在 OS kernel 層實作並驗證這些行為。
+此課程實作不是只呼叫 RTOS API，而是直接閱讀並修改 μC/OS-II scheduler 與 kernel source code，以觀察 context switch、TCB 與 task scheduling 的實際行為。
 
----
+## Implemented Components
 
-## Method（方法）
-- Scheduler：RM / EDF / FIFO
-- Resource protocol：NPCS / CPP（處理共享資源、避免/緩解 priority inversion）
-- 驗證輸出：每個 task 的 response time、preemption、blocking time、deadline miss（可用 log/表格呈現）
+### Scheduler
 
-> 圖：排程與資源協定示意  
-![](/assets/img/projects/rtos/diagram.png)
+- **Rate Monotonic (RM)**
+- **FIFO** non-preemptive scheduling
+- **Earliest Deadline First (EDF)**
+- **Constant Utilization Server (CUS)** for aperiodic jobs
 
----
+### Kernel / Task State
 
-## Experiments（實驗）
-（你可以把實驗配置寫得像論文，這裡我先留模板）
-- Workload：*（填 task 數、period、execution time、deadline 等）*
-- Shared resources：*（填資源數量、哪些 task 會 lock）*
-- Compare：RM vs EDF vs FIFO；有無 NPCS/CPP
-- Metrics：deadline miss count、平均/最大 response time、平均 blocking time
+- TCB dynamic address 與 linked list 追蹤
+- Current / Next task 切換
+- Context switch 次數
+- Response time / Preemption time
+- Deadline miss detection 與處理
 
----
+### Shared Resource Protocol
 
-## Results（結果）
-（建議貼你跑出來的 log 統計表，作品集會非常像論文）
-| Policy | Protocol | Miss count | Avg response | Max response | Avg blocking |
-|---|---|---:|---:|---:|---:|
-| RM | None |  |  |  |  |
-| RM | CPP |  |  |  |  |
-| EDF | None |  |  |  |  |
-| EDF | CPP |  |  |  |  |
+- **Non-Preemptible Critical Section (NPCS)**
+- **Ceiling-Priority Protocol (CPP)**
+- Priority inversion、blocking time 與 resource locking 行為分析
 
----
+## Why it matters
 
-## Demo / Repo
-- Repo：*（若可公開放這裡）*
+這些實作讓我從「使用作業系統」進一步理解到 scheduler 如何在 kernel 層決定 task 執行順序、如何維護 task state，以及共享資源如何影響即時性。對後續嵌入式軟體與韌體工作而言，也建立了較扎實的 RTOS 基礎。

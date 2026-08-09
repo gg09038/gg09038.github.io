@@ -1,83 +1,120 @@
 - id: dvc
-  title: "Deep Video Compression（碩論）"
-  subtitle: "RD Range Expansion + Quality/Feature Modulation"
-  cover: "/assets/img/project-dvc.svg"
-  url: "/projects/dvc/"
-  tags: ["DVC", "RD", "Quality Modulation", "Long-seq"]
+  title: 深度學習式多碼率視訊壓縮系統
+  subtitle: 碩士論文｜單一模型多碼率、全鏈路尺度調變、多源先驗與長鏈穩定化
+  cover: /assets/img/project-dvc.svg
+  url: /projects/dvc/
+  category: AI / Research
+  tags:
+  - PyTorch
+  - Deep Video Compression
+  - Entropy Model
+  - Rate-Distortion
+  - Multi-Rate
   metrics:
-    - label: "Avg BD-Rate"
-      value: "-49.95%"
-    - label: "Avg BD-PSNR"
-      value: "+3.122 dB"
-    - label: "Test sets"
-      value: "HEVC B/C/D/E + UVG"
-
-- id: cnc
-  title: "CNC 工具機鐵屑清潔度監控（CACS 2024）"
-  subtitle: "影像判定 → 清潔決策 → 硬體控制 → 監控介面"
-  cover: "/assets/img/project-cnc.svg"
-  url: "/projects/cnc-cacs/"
-  tags: ["Industrial CV", "OpenCV", "Embedded", "System"]
-  metrics:
-    - label: "Pipeline"
-      value: "CV→Decision→Control"
-    - label: "Output"
-      value: "Dashboard + Control"
-    - label: "Focus"
-      value: "Noise/Reflection robust"
-
+  - label: P-frame BD-rate vs. HEVC
+    value: -44.91%
+  - label: All-frame BD-rate vs. HEVC
+    value: -37.73%
+  - label: PSNR operating range
+    value: +2.39–2.61 dB
+  period: 2025.03 — 2026.08
 - id: kl730
-  title: "KL730 邊緣裝置：RGB + Thermal 疊合對齊"
-  subtitle: "Homography / Perspective Transform + ToF distance"
-  cover: "/assets/img/project-kl730.svg"
-  url: "/projects/kl730-fusion/"
-  tags: ["Edge AI", "Thermal-RGB", "Homography", "Calibration"]
+  title: 多模態 RGB/IR 即時影像融合系統
+  subtitle: 產學合作｜ToF 深度索引 Homography + KL730 嵌入式部署 + AI 物件辨識
+  cover: /assets/img/projects/kl730/rgbir-ai.png
+  url: /projects/kl730-fusion/
+  category: Embedded AI
+  tags:
+  - Computer Vision
+  - RGB/IR Fusion
+  - Homography
+  - ToF
+  - KL730
   metrics:
-    - label: "Device"
-      value: "KL730"
-    - label: "Sensors"
-      value: "RGB + Thermal + ToF"
-    - label: "Output"
-      value: "Fused view + Web control"
-
-- id: rag
-  title: "國民法官最佳助手（Local LLM + RAG）"
-  subtitle: "法律 Q&A / 摘要 / 判決預測（可離線、可更新）"
-  cover: "/assets/img/project-rag.svg"
-  url: "/projects/regtech-ad-checker/"
-  tags: ["RAG", "Local LLM", "Prompt", "Data Pipeline"]
-  metrics:
-    - label: "Mode"
-      value: "Local + Private"
-    - label: "Core"
-      value: "RAG + Prompting"
-    - label: "Tasks"
-      value: "QA / Summary / Predict"
-
-- id: coscop
-  title: "藥妝品廣告詞違規檢測（獲獎）"
-  subtitle: "文案 → 違規類型 → 可解釋輸出"
-  cover: "/assets/img/project-coscop.svg"
-  url: "/projects/coscop/"
-  tags: ["NLP", "Explainable", "RegTech", "Web API"]
-  metrics:
-    - label: "Result"
-      value: "Final + Award"
-    - label: "Output"
-      value: "Explainable labels"
-    - label: "Stack"
-      value: "API + UI"
-
+  - label: Platform
+    value: KL730
+  - label: Sensors
+    value: RGB + Thermal + ToF
+  - label: Deployment
+    value: Real-time Embedded
+  period: 2025.01 — 2026.01
 - id: rtos
-  title: "RTOS（μC/OS-II）排程演算法實作"
-  subtitle: "RM/EDF/FIFO + NPCS/CPP，輸出 response/preemption/miss"
-  cover: "/assets/img/project-rtos.svg"
-  url: "/projects/rtos-scheduler/"
-  tags: ["RTOS", "Scheduling", "Kernel", "Real-time"]
+  title: μC/OS-II 即時排程與核心層實作
+  subtitle: Kernel-level scheduler、TCB、deadline handling、resource protocol
+  cover: /assets/img/project-rtos.svg
+  url: /projects/rtos-scheduler/
+  category: Embedded / System
+  tags:
+  - RTOS
+  - C
+  - μC/OS-II
+  - Scheduler
+  - Kernel
   metrics:
-    - label: "Schedulers"
-      value: "RM / EDF / FIFO"
-    - label: "Metrics"
-      value: "Response/Preempt/Miss"
-    - label: "Level"
-      value: "Kernel-level"
+  - label: Schedulers
+    value: RM / FIFO / EDF / CUS
+  - label: Protocols
+    value: NPCS / CPP
+  - label: Level
+    value: Kernel-level
+  period: 2025 Spring
+- id: cnc
+  title: CNC 工具機智慧鐵屑清潔監控系統
+  subtitle: 大學專題｜電腦視覺 × Arduino × 伺服控制 × 即時監控
+  cover: /assets/img/project-cnc.svg
+  url: /projects/cnc-cacs/
+  category: Computer Vision
+  tags:
+  - Computer Vision
+  - OpenCV
+  - Python
+  - Arduino
+  - Servo Control
+  metrics:
+  - label: Output
+    value: IEEE paper
+  - label: Pipeline
+    value: Vision → Control
+  - label: Prototype
+    value: End-to-end
+  period: 2023.01 — 2024.06
+- id: rag
+  title: 基於本地語言模型之司法判決預測
+  subtitle: 課堂專案｜Local LLM + RAG + Prompt Engineering
+  cover: /assets/img/project-rag.svg
+  url: /projects/juror-rag/
+  category: Generative AI
+  tags:
+  - Local LLM
+  - TAIDE
+  - RAG
+  - Prompt Engineering
+  - Data Pipeline
+  metrics:
+  - label: Mode
+    value: Local / Private
+  - label: Core
+    value: RAG
+  - label: Domain
+    value: Legal AI
+  period: 2024.10 — 2025.01
+- id: coscop
+  title: 藥妝品廣告詞違規檢測系統
+  subtitle: 2023 法律科技競賽｜可解釋規則/語意建模 + API + Web UI
+  cover: /assets/img/project-coscop.svg
+  url: /projects/coscop/
+  category: NLP / Software
+  tags:
+  - NLP
+  - API
+  - Database
+  - Web UI
+  - RegTech
+  metrics:
+  - label: Random test
+    value: 50 samples
+  - label: Success rate
+    value: '> 90%'
+  - label: Output
+    value: Working prototype
+  period: 2023.01 — 2023.09

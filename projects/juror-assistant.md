@@ -1,77 +1,35 @@
 ---
-title: "國民法官最佳助手（Local LLM + RAG）"
+layout: project
+title: "基於本地語言模型之司法判決預測"
+kicker: "Course Project · Generative AI"
+subtitle: "Local LLM + RAG legal assistant with privacy-oriented deployment"
+hero: "/assets/img/project-rag.svg"
+tags: ["Local LLM", "TAIDE", "RAG", "Prompt Engineering", "Data Pipeline"]
+metrics:
+  - label: "Execution"
+    value: "Local"
+  - label: "Core"
+    value: "RAG"
+  - label: "Domain"
+    value: "Legal AI"
 permalink: /projects/juror-rag/
 ---
 
-# 國民法官最佳助手（Local LLM + RAG）
-> **Problem → Method → Experiments → Results → Demo/Repo**
+# 基於本地語言模型之司法判決預測
 
-**一句話摘要**：用本地 LLM + RAG 做法律輔助與量刑預測，強調「保密、可更新、可查詢」，並透過資料集整理與 embedding/格式調整改善檢索品質。
+> **一句話摘要**：以本地語言模型搭配 RAG 建立法律助理原型，兼顧案件資料保密、即時查詢與知識更新能力。
 
----
+## Problem
 
-## Problem（問題）
-國民法官制度上路後，民眾與非法律背景參與審理時，會需要大量「法條解釋、法律用語白話化、文件摘要、流程/權利義務、量刑理由」的即時輔助；同時司法文件具敏感性，需避免外流，並且法律/制度資訊需要可更新。
+司法案件與判決資料具有隱私與敏感性，直接將內容送往外部雲端模型並不理想；同時法律知識具有時效性，需要能夠持續更新資料來源。
 
----
+## Method
 
-## Method（方法）
-### 1) 系統定位與功能
-系統提供：
-- 刑事判決預測（並說明量刑因素）
-- 刑民事法條通俗講解
-- 常見法律單詞白話解釋 + 例子
-- 法律文件白話摘要（判決書/起訴書等）
-- 國民法官制度/常見問題查詢
+- 使用 **TAIDE / Local LLM** 建立本地端推論環境。
+- 整理法學資料並建立 **Retrieval-Augmented Generation (RAG)** 流程。
+- 透過 Prompt Engineering 改善回答格式與任務引導。
+- 針對長文件先摘要或重整內容，再進行量刑/法律問答。
 
-### 2) 模型與平台
-- LLM：`taide/Llama3-TAIDE-LX-8B-Chat-Alpha1`
-- 平台：Kuwa GenAI OS
-- Embedding：改為 `intfloat/multilingual-e5-large`
-- 核心：系統提示詞設計 + RAG（Retrieval-Augmented Generation）
+## Result
 
-> 圖：系統架構圖（建議你從報告截「圖一」放這裡）  
-![](/assets/img/projects/juror/architecture.png)
-
-### 3) 資料管線與 RAG 強化
-- 先測「只有提示詞」時模型的錯誤型態（例如：引用法條錯誤、資訊過時）
-- 依任務加入對應資料集（法條、國民法官制度資訊、法律用語辭典等）
-- 當資料量增加導致「檢索不準/回答變慢」時：
-  - 更換 embedding 模型
-  - 避免無腦丟 PDF，改用模型較友善的格式（如 JSON）來存資料
-
----
-
-## Experiments（實驗）
-### 任務面向（五個方向）
-1) 刑事判決預測  
-2) 刑民事法條通俗講解  
-3) 常見法律單詞白話文解釋  
-4) 法律文件白話摘要  
-5) 國民法官相關問題查詢  
-
-### 案例測試（量刑預測）
-- 以「臺灣新北地方法院刑事判決 109年度訴字第1205號」測試  
-- 觀察到「判決書過長」會導致模型忽略量刑因子，因此改用摘要後再預測，刑期更接近實際判決。
-
----
-
-## Results（結果）
-### 1) RAG 對「過時/錯誤引用」的改善（示例）
-- 只用提示詞時，可能出現「資訊已過時」的回答；加入 RAG 資料後可用更新資訊回覆（你簡報中有補貼金額的對照例子）。
-
-### 2) 量刑預測：摘要後更接近實際判決
-- 初次預測與實際判決有落差  
-- 摘要後重新輸入，刑期預測更靠近實際判決，且能列出毒品數量、交易方式、犯後態度等量刑因子（但仍可能在易科罰金換算等細節出錯）。
-
-> 圖：量刑預測輸出對照（建議截圖）  
-![](/assets/img/projects/juror/sentencing.png)
-
-### 3) 整體 demo 表現
-- demo 影片中實測多項功能，除少數「輸入過長」或「問 A 答 B」外，整體運作順利。
-
----
-
-## Demo / Repo
-- Demo（YouTube）：https://youtu.be/qP7YR5K0h5g  
-- Repo：*（若可公開放這裡）*
+完成可在本地端運行的法律助理原型，支援法律資料檢索、白話說明與司法判決相關任務；實作過程中也觀察並處理長文本、檢索品質與模型回答一致性等問題。

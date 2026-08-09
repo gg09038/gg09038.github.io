@@ -1,32 +1,39 @@
 ---
 layout: default
 ---
-<div class="project-hero">
-  <div class="top">
-    <img src="{{ page.hero | default: '/assets/img/hero-bg.svg' | relative_url }}" alt="">
-    <div>
+<article class="project-page">
+  <a class="back-link" href="{{ '/projects/' | relative_url }}">← 返回 Projects</a>
+
+  <header class="project-hero">
+    <div class="project-hero-copy">
+      {% if page.kicker %}<div class="eyebrow">{{ page.kicker }}</div>{% endif %}
       <h1>{{ page.title }}</h1>
-      {% if page.subtitle %}<p class="meta">{{ page.subtitle }}</p>{% endif %}
+      {% if page.subtitle %}<p class="project-subtitle">{{ page.subtitle }}</p>{% endif %}
       {% if page.tags %}
       <div class="tags">
         {% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}
       </div>
       {% endif %}
     </div>
-  </div>
+    {% if page.hero %}
+    <div class="project-hero-media">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+  </header>
 
   {% if page.metrics %}
-  <div class="metrics">
+  <section class="metric-strip" aria-label="project metrics">
     {% for m in page.metrics %}
       <div class="metric">
-        <div class="k">{{ m.label }}</div>
-        <div class="v">{{ m.value }}</div>
+        <div class="metric-label">{{ m.label }}</div>
+        <div class="metric-value">{{ m.value }}</div>
       </div>
     {% endfor %}
-  </div>
+  </section>
   {% endif %}
-</div>
 
-<div class="content">
-  {{ content }}
-</div>
+  <div class="project-content prose">
+    {{ content }}
+  </div>
+</article>

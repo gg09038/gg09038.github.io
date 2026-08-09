@@ -1,77 +1,53 @@
 ---
-title: "Deep Video Compression（碩論）"
+layout: project
+title: "深度學習式多碼率視訊壓縮系統"
+kicker: "Master Thesis · Deep Learning"
+subtitle: "Single-Model Multi-Rate Deep Video Compression with Full-Path Scale Modulation and Multi-Source Prior Fusion"
+hero: "/assets/img/project-dvc.svg"
+tags: ["PyTorch", "Deep Video Compression", "Entropy Model", "Rate-Distortion", "Multi-Rate"]
+metrics:
+  - label: "P-frame BD-rate vs. HM-16.25"
+    value: "-44.91%"
+  - label: "All-frame BD-rate vs. HM-16.25"
+    value: "-37.73%"
+  - label: "PSNR operating range"
+    value: "+2.39–2.61 dB"
 permalink: /projects/dvc/
 ---
 
-# Deep Video Compression（碩論）
-> **Problem → Method → Experiments → Results → Demo/Repo**
+# 深度學習式多碼率視訊壓縮系統
 
-**一句話摘要**：用單一模型拓展 RD 操作範圍，並用品質/特徵調變降低長序列誤差傳播，讓長片段更穩定、也省掉多碼率重訓的成本。
+> **一句話摘要**：以單一模型支援多個率失真操作點，透過全鏈路尺度調變、多源先驗融合與長序列穩定化設計，改善可變碼率操作彈性與長鏈編碼效率。
 
----
+## Problem
 
-## Problem（研究問題）
-深度視訊壓縮（DVC）雖然在客觀品質上逐步逼近傳統標準，但仍常見兩個部署痛點：  
-1) **單一模型可涵蓋的 RD（Rate–Distortion）範圍有限**，不同碼率點常要分別訓練/調參。  
-2) **長序列容易出現誤差累積與擴散**，跨幀預測誤差會讓品質逐步衰退、變得不穩定。
+深度視訊壓縮在實際應用上除了追求壓縮效率，也需要單一模型能涵蓋較寬廣且穩定的率失真（Rate-Distortion, RD）操作範圍。基準模型在不同量化條件下仍存在碼率響應不足、位元配置彈性有限，以及長預測鏈下誤差累積等問題。
 
----
+## Method
 
-## Method（方法）
-### 1) RD Range Expansion（RD 範圍拓展）
-- 使用端到端 **Feature Modulation（特徵調變）**，讓編碼器/解碼器依目標碼率自適應調整表徵分配與量化強度。
-- 搭配 **多階段訓練流程**，降低「每個碼率點都要分別訓練」的成本。
+- **全鏈路尺度調變**：將品質控制訊號導入內容潛變量、運動潛變量、時序上下文與重建特徵等主要路徑。
+- **多源先驗融合**：擴充內容與運動分支的條件熵模型，整合跨幀狀態與多種先驗資訊。
+- **空間位元配置**：增加空間域量化調變能力，使不同區域能依內容特性調整位元配置。
+- **長序列穩定化**：重整參考特徵來源與長序列訓練流程，降低長預測鏈下的品質劣化。
+- **訓練策略**：採用全域指數型非均勻抽樣，以強化高品質端的學習並拓展單一模型操作範圍。
 
-> 圖：方法總覽（建議放一張架構圖）  
-![](/assets/img/projects/dvc/overview.png)
+## Engineering Work
 
-### 2) Long-sequence Stabilization（長序列穩定化）
-- 設計 **幀內品質調變（Intra-frame Quality Modulation）**：策略性切換關鍵幀的幀內重建品質。  
-- 引入 **階層式長鏈參考（Hierarchical Long-chain Reference）**：強化時域約束、抑制誤差在後續幀傳遞與放大。
+此研究不只包含模型架構設計，也包含完整的研究與工程流程：
 
-> 圖：長序列誤差傳播示意（建議放「不做 vs 做」對比圖）  
-![](/assets/img/projects/dvc/error_propagation.png)
+- 閱讀、重現與比較 DCVC 系列等 learned video compression 方法。
+- 在大型 PyTorch codebase 中修改模型架構、熵模型與訓練/測試流程。
+- 追蹤跨幀 recurrent state 與 tensor data flow，處理訓練不穩定、NaN、estimated/actual bitrate mismatch 等問題。
+- 以消融實驗、RD curve、BD-rate / BD-PSNR 與長序列測試驗證各項設計。
 
-### 3) Implementation Notes（實作重點）
-- 在 codebase 中實作 **Feature Modulation 版本**：以 gain/scale 模組插入至多層表徵處理流程（example：`FeatureGainedMSHyperprior` 類別）。
-- 用固定的 λ（lambda）集合支援多個 RD 工作點（可在文末 Repo/Code 連結中補上對應 commit/檔案）。
+## Results
 
----
+在 GOP12、PSNR-YUV 與實際位元流評估設定下：
 
-## Experiments（實驗設計）
-### Datasets
-- **HEVC Class B/C/D/E + UVG**（20+ 段序列）
+- 相較 HM-16.25，**P-frame 平均 BD-rate 降低 44.91%**。
+- 相較 HM-16.25，**All-frame 平均 BD-rate 降低 37.73%**。
+- 相較基準模型，**PSNR 可操作範圍拓展約 2.39–2.61 dB**。
 
-### Metrics
-- **Avg BD-Rate / Avg BD-PSNR**（你目前首頁與 projects list 已經用這組指標呈現）
+## What I learned
 
-### Baselines（可選）
-- 你 repo 裡已有 per-sequence 的 BD 統計檔（如 DCVC/TCM 的 `*_ssim_BD.json`），可用來補上對比表格（或貼在附錄）。
-
----
-
-## Results（結果）
-### Main numbers（目前版本）
-- **Avg BD-Rate：-49.95%**
-- **Avg BD-PSNR：+3.122 dB**
-- 測試集：HEVC B/C/D/E + UVG，20+ 段序列
-
-> 圖：RD Curve / BD-Rate 對比圖（你 `projects.md` 已經預留了 bdrate.png）  
-![](/assets/img/bdrate.png)
-
-### Qualitative（建議補）
-- 放 2–4 組「原圖 / 重建圖 / 殘差」或「長序列後段品質穩定度」對比  
-![](/assets/img/projects/dvc/qual_1.png)  
-![](/assets/img/projects/dvc/qual_2.png)
-
----
-
-## Demo / Repo
-- Demo：*（若有影片/簡報連結放這裡）*
-- Repo：*（放 GitHub repo 連結；或私有可放「可提供 upon request」）*
-
----
-
-## What I learned（可選）
-- 如何把研究貢獻落到可重現的評估流程（RD curve、BD 指標、長序列穩定度）
-- 訓練多 RD 工作點時的穩定訓練策略與 debug（loss/scale stats）
+這項研究讓我建立從論文理解、模型實作、系統化除錯到量化實驗驗證的完整流程，也讓我更熟悉大型深度學習專案中的資料流追蹤與模組整合。
