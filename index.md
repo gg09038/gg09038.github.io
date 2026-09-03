@@ -308,15 +308,3 @@ layout: default
     </div>
   </div>
 </section>
-
-<section class="section-block contact-block">
-  <div>
-    <div class="section-kicker">CONTACT</div>
-    <h2>對演算法、電腦視覺與嵌入式軟體職缺有興趣</h2>
-    <p>希望將研究階段累積的模型開發、問題分析與系統整合能力，投入實際產品與工程開發。</p>
-  </div>
-  <div class="contact-actions">
-    <a class="btn primary" href="mailto:as0903817384@gmail.com">Email</a>
-    <a class="btn" href="https://github.com/gg09038" target="_blank" rel="noopener">GitHub ↗</a>
-  </div>
-</section>
