@@ -3,7 +3,7 @@ layout: project
 title: "μC/OS-II 即時排程與核心層實作"
 kicker: "Course Project · Embedded OS"
 subtitle: "Kernel-level scheduler modification, TCB tracing, deadline handling and resource protocols"
-hero: "/assets/img/RTOS,png"
+hero: "/assets/img/RTOS.png"
 tags: ["RTOS", "C", "μC/OS-II", "Scheduler", "Kernel", "Real-time"]
 metrics:
   - label: "Schedulers"
