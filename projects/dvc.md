@@ -99,7 +99,7 @@ permalink: /projects/dvc/
 - **vs. HM-16.25**：P-frame / I+P-frame BD-rate 分別為
   **-44.91% / -37.73%**。
 
-- **vs. Lu'25 baseline (RC)**：P-frame / I+P-frame BD-rate 分別為
+- **vs. Lu'25 baseline**：P-frame / I+P-frame BD-rate 分別為
   **-73.22% / -45.36%**。
 
 同時，單一模型的 PSNR 操作範圍較基準模型增加約 **2.39–2.61 dB**。
