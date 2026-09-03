@@ -138,6 +138,37 @@ layout: default
   }
 </style>
 
+<section class="section-block">
+  <div class="section-heading">
+    <div>
+      <div class="section-kicker">HIGHLIGHTS</div>
+      <h2>關鍵成果</h2>
+    </div>
+  </div>
+
+  <div class="skill-grid">
+    <div class="skill-card">
+      <h3>Deep Video Compression</h3>
+      <p><strong>-44.91% BD-rate</strong> · P-frame vs. H.265 reference，並擴展單一模型多碼率操作範圍。</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Embedded AI Deployment</h3>
+      <p>完成 <strong>RGB / Thermal / ToF</strong> 多模態影像融合，並部署於 <strong>KL730</strong> Edge AI 平台。</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>IEEE CACS 2024</h3>
+      <p>以 CNC 工具機鐵屑清潔監控系統成果發表 <strong>IEEE conference paper</strong>。</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Academic Excellence</h3>
+      <p><strong>Graduate coursework GPA 3.96 / 4.3</strong> · Feng Chia University Academic Excellence Award。</p>
+    </div>
+  </div>
+</section>
+
 <section id="about" class="section-block two-col">
   <div>
     <div class="section-kicker">ABOUT</div>
@@ -158,48 +189,56 @@ layout: default
 
 <section class="section-block">
   <div class="section-heading">
-    <div><div class="section-kicker">EDUCATION</div><h2>學歷與研究方向</h2></div>
+    <div>
+      <div class="section-kicker">EXPERIENCE</div>
+      <h2>產學合作經歷</h2>
+    </div>
   </div>
+
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">2024.09 — 2026.09</div>
+      <div class="timeline-date">2025.01 — 2026.01</div>
       <div class="timeline-content">
-        <h3>國立臺灣科技大學 · 電機工程系碩士班</h3>
-        <p>深度視訊壓縮、深度學習、影像處理、嵌入式作業系統實作。</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">2020.09 — 2024.06</div>
-      <div class="timeline-content">
-        <h3>逢甲大學 · 自動控制工程學系</h3>
-        <p>自動控制、電腦視覺、嵌入式控制與系統整合；IEEE 論文發表。</p>
+        <h3>Industry Collaboration · RGB / Thermal / ToF Edge AI System</h3>
+        <p><strong>National Taiwan University of Science and Technology</strong></p>
+        <p>
+          參與多功能熱影像重疊智慧傳輸模組之系統整合開發，
+          負責 RGB / Thermal 影像校正與疊合、ToF 距離資訊整合、KL730 Edge AI 平台部署與跨模組除錯。
+        </p>
+        <p>
+          將影像處理流程由 PC 原型移植至嵌入式 C++ 環境，並整合即時顯示、AI 物件辨識、
+          外部控制介面與系統測試。
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills" class="section-block">
+<section class="section-block">
   <div class="section-heading">
-    <div><div class="section-kicker">SKILLS</div><h2>核心能力</h2></div>
+    <div><div class="section-kicker">EDUCATION</div><h2>學歷與研究方向</h2></div>
   </div>
-  <div class="skill-grid">
-    <div class="skill-card">
-      <h3>AI / Model</h3>
-      <p>PyTorch · Deep Learning · Deep Video Compression · Entropy Modeling · Rate-Distortion Optimization</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2024 — 2026</div>
+      <div class="timeline-content">
+        <h3>National Taiwan University of Science and Technology</h3>
+        <p><strong>M.S. Electrical Engineering · 2024–2026</strong></p>
+        <p>Deep Video Compression / Computer Vision / Embedded Systems</p>
+        <p><strong>Graduate coursework GPA: 3.96 / 4.3</strong></p>
+      </div>
     </div>
-    <div class="skill-card">
-      <h3>Computer Vision</h3>
-      <p>OpenCV · Image Processing · RGB/IR Fusion · Homography · ToF · Object Detection</p>
-    </div>
-    <div class="skill-card">
-      <h3>Embedded / System</h3>
-      <p>C/C++ · μC/OS-II · RTOS Scheduler · Arduino · Serial Communication · Edge AI</p>
-    </div>
-    <div class="skill-card">
-      <h3>Engineering Workflow</h3>
-      <p>Python · Git · Linux · Experiment Design · Systematic Debugging · Data-driven Validation</p>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">2020 — 2024</div>
+      <div class="timeline-content">
+        <h3>Feng Chia University</h3>
+        <p><strong>B.S. Automatic Control Engineering · 2020–2024</strong></p>
+        <p><strong>GPA: 3.60 / 4.3 · Top 20% · Academic Excellence Award</strong></p>
+      </div>
     </div>
   </div>
 </section>
@@ -236,10 +275,46 @@ layout: default
     <div class="pub-index">01</div>
     <div class="pub-content">
       <h3>A Monitoring and Control System Based on Image Recognition for Iron Filings Cleaning of CNC Machine Tools</h3>
-      <p>大學專題延伸成果 · IEEE Xplore</p>
+      <p>
+        <strong>Tsung-Yen Yang</strong>, Fu-Yu Chiang, Yan-Hong Chen, Guan-Jie Lee,
+        Yu-Sheng Lin, Shang-Chih Lin, Shun-Feng Su, and Yennun Huang
+      </p>
+      <p><strong>2024 International Automatic Control Conference (CACS)</strong> · 2024 · pp. 1–6 · IEEE</p>
+      <p>DOI: 10.1109/CACS63404.2024.10773234</p>
     </div>
     <div class="pub-arrow">↗</div>
   </a>
+</section>
+
+<section id="skills" class="section-block">
+  <div class="section-heading">
+    <div>
+      <div class="section-kicker">TECHNICAL STACK</div>
+      <h2>技術能力</h2>
+    </div>
+  </div>
+
+  <div class="tech-stack">
+    <div class="tech-row">
+      <strong>AI / Video</strong>
+      <span>PyTorch · Deep Video Compression · Entropy Modeling · Rate-Distortion Optimization</span>
+    </div>
+
+    <div class="tech-row">
+      <strong>Computer Vision</strong>
+      <span>OpenCV · RGB/IR Fusion · Homography · ToF · Object Detection</span>
+    </div>
+
+    <div class="tech-row">
+      <strong>Embedded / System</strong>
+      <span>C/C++ · μC/OS-II · RTOS · Arduino · Serial Communication · Edge AI</span>
+    </div>
+
+    <div class="tech-row">
+      <strong>Development</strong>
+      <span>Python · Git · Linux</span>
+    </div>
+  </div>
 </section>
 
 <section class="section-block contact-block">
