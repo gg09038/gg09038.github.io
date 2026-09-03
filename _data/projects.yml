@@ -40,7 +40,7 @@
   period: 2025.01 — 2026.01
 - id: rtos
   title: μC/OS-II 即時排程與核心層實作
-  subtitle: Kernel-level scheduler、TCB、deadline handling、resource protocol
+  subtitle: 課堂成果｜Kernel-level scheduler、TCB、deadline handling、resource protocol
   cover: /assets/img/project-rtos.svg
   url: /projects/rtos-scheduler/
   category: Embedded / System
