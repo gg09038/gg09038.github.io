@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "多模態 RGB/IR 即時影像融合系統"
-kicker: "Industry Collaboration · Embedded AI"
+kicker: "Industry Collaboration · 全科科技"
 subtitle: "Depth-indexed Homography for RGB/Thermal alignment with ToF sensing and KL730 deployment"
 hero: "/assets/img/projects/kl730/cat.png"
 tags: ["Computer Vision", "RGB/IR Fusion", "Homography", "ToF", "KL730", "C++"]
