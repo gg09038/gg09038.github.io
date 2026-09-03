@@ -1,7 +1,7 @@
 - id: dvc
   title: 深度學習式多碼率視訊壓縮系統
   subtitle: 碩士論文｜單一模型多碼率、全鏈路尺度調變、多源先驗與長鏈穩定化
-  cover: /assets/img/project-dvc.svg
+  cover: /assets/img/projects/dvc/original.png
   url: /projects/dvc/
   category: AI / Research
   tags:
@@ -21,7 +21,7 @@
 - id: kl730
   title: 多模態 RGB/IR 即時影像融合系統
   subtitle: 產學合作｜ToF 深度索引 Homography + KL730 嵌入式部署 + AI 物件辨識
-  cover: /assets/img/projects/kl730/rgbir-ai.png
+  cover: /assets/img/projects/kl730/cat.png
   url: /projects/kl730-fusion/
   category: Embedded AI
   tags:
@@ -61,7 +61,7 @@
 - id: cnc
   title: CNC 工具機智慧鐵屑清潔監控系統
   subtitle: 大學專題｜電腦視覺 × Arduino × 伺服控制 × 即時監控
-  cover: /assets/img/project-cnc.svg
+  cover: /assets/img/projects/cnc/real.jpg
   url: /projects/cnc-cacs/
   category: Computer Vision
   tags:
@@ -101,7 +101,7 @@
 - id: coscop
   title: 藥妝品廣告詞違規檢測系統
   subtitle: 2023 法律科技競賽｜可解釋規則/語意建模 + API + Web UI
-  cover: /assets/img/project-coscop.svg
+  cover: /assets/img/coscopppt.png
   url: /projects/coscop/
   category: NLP / Software
   tags:

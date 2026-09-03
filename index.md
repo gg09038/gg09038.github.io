@@ -3,7 +3,7 @@ title: "楊宗諺 Tsung-Yen Yang | Portfolio"
 layout: default
 ---
 
-<section class="hero-modern">
+<section class="hero-modern hero-integrated">
   <div class="hero-copy">
     <div class="eyebrow">M.S. in Electrical Engineering · NTUST</div>
 
@@ -44,14 +44,99 @@ layout: default
     </div>
   </div>
 
-  <div class="hero-photo-wrap">
+  <div class="hero-photo-panel">
     <img
       class="hero-photo"
       src="{{ '/assets/img/profile/profile.webp' | relative_url }}"
       alt="楊宗諺 Tsung-Yen Yang"
+      loading="eager"
     >
   </div>
 </section>
+
+<style>
+  /*
+   * Hero 區塊改為同一張卡片中的左右雙欄：
+   * 左側 = 個人資訊
+   * 右側 = 個人照片
+   */
+  .hero-modern.hero-integrated {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.85fr);
+    align-items: stretch;
+    gap: 0;
+
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-integrated .hero-copy {
+    min-width: 0;
+    padding-right: clamp(28px, 4vw, 64px);
+  }
+
+  .hero-integrated .hero-photo-panel {
+    position: relative;
+    min-width: 0;
+    align-self: stretch;
+    overflow: hidden;
+
+    /*
+     * 圖片屬於 hero-modern 本體，因此會和文字共用
+     * 同一個外層圓角 / 邊框 / 陰影。
+     */
+    border-radius: 0;
+    background: #eef4fb;
+  }
+
+  .hero-integrated .hero-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+
+  /*
+   * 如果原本 hero-modern 的 padding 會讓右側照片無法貼齊外框，
+   * 只取消右側外層 padding；文字區自己的 padding 仍由 hero-copy 保留。
+   */
+  .hero-modern.hero-integrated {
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-integrated .hero-copy {
+    padding-top: clamp(42px, 5vw, 72px);
+    padding-bottom: clamp(42px, 5vw, 64px);
+  }
+
+  /*
+   * 平板 / 手機：改成上下排列，避免窄螢幕硬塞雙欄。
+   */
+  @media (max-width: 900px) {
+    .hero-modern.hero-integrated {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+    }
+
+    .hero-integrated .hero-copy {
+      padding-left: clamp(24px, 6vw, 48px);
+      padding-right: clamp(24px, 6vw, 48px);
+    }
+
+    .hero-integrated .hero-photo-panel {
+      min-height: 360px;
+    }
+
+    .hero-integrated .hero-photo {
+      height: 360px;
+      object-position: center 30%;
+    }
+  }
+</style>
 
 <section id="about" class="section-block two-col">
   <div>
