@@ -60,7 +60,7 @@ permalink: /projects/dvc/
     loading="lazy"
     style="width:100%;height:auto;">
   <figcaption>
-    基準模型的 bitrate 非單調現象：品質索引提高時，實際位元消耗不一定穩定增加，代表品質控制訊號未能一致地反映到整條編碼路徑。
+    基準模型的 bitrate 非單調現象：品質索引提高時，實際位元消耗不一定穩定增加。
   </figcaption>
 </figure>
 
@@ -94,7 +94,7 @@ permalink: /projects/dvc/
 
 ## Result
 
-最終模型以 **GOP12、PSNR-YUV 與實際 bitstream** 進行評估：
+最終模型以 **GOP12、YUV420 格式與實際 bitstream** 進行評估：
 
 - **vs. HM-16.25**：P-frame / I+P-frame BD-rate 分別為
   **-44.91% / -37.73%**。
