@@ -174,7 +174,7 @@ layout: default
       <div class="timeline-date">2020.09 — 2024.06</div>
       <div class="timeline-content">
         <h3>逢甲大學 · 自動控制工程學系</h3>
-        <p>自動控制、電腦視覺、嵌入式控制與系統整合；專題完成 IEEE 論文發表。</p>
+        <p>自動控制、電腦視覺、嵌入式控制與系統整合；IEEE 論文發表。</p>
       </div>
     </div>
   </div>

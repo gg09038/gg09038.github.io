@@ -41,7 +41,7 @@
 - id: rtos
   title: μC/OS-II 即時排程與核心層實作
   subtitle: 課堂成果｜Kernel-level scheduler、TCB、deadline handling、resource protocol
-  cover: /assets/img/project-rtos.svg
+  cover: /assets/img/RTOS.png
   url: /projects/rtos-scheduler/
   category: Embedded / System
   tags:
@@ -81,7 +81,7 @@
 - id: rag
   title: 基於本地語言模型之司法判決預測
   subtitle: 課堂專案｜Local LLM + RAG + Prompt Engineering
-  cover: /assets/img/project-rag.svg
+  cover: /assets/img/LLM.png
   url: /projects/juror-rag/
   category: Generative AI
   tags:

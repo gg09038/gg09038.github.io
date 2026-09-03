@@ -3,7 +3,7 @@ layout: project
 title: "基於本地語言模型之司法判決預測"
 kicker: "Course Project · Generative AI"
 subtitle: "Local LLM + RAG legal assistant with privacy-oriented deployment"
-hero: "/assets/img/project-rag.svg"
+hero: "/assets/img/LLM.png"
 tags: ["Local LLM", "TAIDE", "RAG", "Prompt Engineering", "Data Pipeline"]
 metrics:
   - label: "Execution"
