@@ -16,7 +16,6 @@ layout: default
       專注於 <strong>深度學習、電腦視覺與嵌入式系統</strong>。
       研究與開發經歷涵蓋深度視訊壓縮、RGB/IR 多模態影像融合、
       Edge AI 部署與 RTOS 核心層實作。
-      習慣從資料流與模組介面拆解問題，將演算法延伸至完整系統整合與部署。
     </p>
 
     <div class="hero-actions">
