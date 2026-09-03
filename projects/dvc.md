@@ -178,9 +178,9 @@ P-frame 會依賴先前已重建的影格，因此誤差可能沿預測鏈持續
 |---|---:|---:|
 | HM-16.25 (H.265 reference) | 0.00% | 0.000 dB |
 | VTM-13.2 (H.266 reference) | -17.88% | +0.689 dB |
-| DCVC-DC (Microsoft 2023) | -16.70% | +0.615 dB |
-| DCVC-FM (Microsoft 2024) | **-41.51%** | **+1.851 dB** |
-| DCVC-RT (Microsoft 2025) | -35.74% | +1.475 dB |
+| DCVC-DC (CVPR 2023) | -16.70% | +0.615 dB |
+| DCVC-FM (CVPR 2024) | **-41.51%** | **+1.851 dB** |
+| DCVC-RT (CVPR 2025) | -35.74% | +1.475 dB |
 | Lu'25 Baseline (2025) | +14.20% | -0.267 dB |
 | **Proposed** | **-37.73%** | **+1.733 dB** |
 
