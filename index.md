@@ -181,17 +181,26 @@ layout: default
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
+
       <div class="timeline-date">2025.01 — 2026.01</div>
+
       <div class="timeline-content">
-        <h3>Industry Collaboration · RGB / Thermal / ToF Edge AI System</h3>
-        <p><strong>National Taiwan University of Science and Technology</strong></p>
+        <h3>RGB / Thermal / ToF Edge AI System</h3>
+
         <p>
-          參與多功能熱影像重疊智慧傳輸模組之系統整合開發，
-          負責 RGB / Thermal 影像校正與疊合、ToF 距離資訊整合、KL730 Edge AI 平台部署與跨模組除錯。
+          <strong>National Taiwan University of Science and Technology × 全科科技</strong>
+          · Industry Collaboration
         </p>
+
         <p>
-          將影像處理流程由 PC 原型移植至嵌入式 C++ 環境，並整合即時顯示、AI 物件辨識、
-          外部控制介面與系統測試。
+          參與「多功能熱影像重疊智慧傳輸模組」系統整合開發，
+          負責 RGB / Thermal 影像校正與疊合、ToF 距離資訊整合、
+          KL730 Edge AI 平台部署與跨模組除錯。
+        </p>
+
+        <p>
+          將 PC 端影像處理原型移植至 KL730 嵌入式 C++ 環境，
+          並整合即時顯示、AI 物件辨識、外部控制介面與系統測試。
         </p>
       </div>
     </div>
