@@ -13,8 +13,10 @@ layout: default
     </h1>
 
     <p class="hero-lead">
-      專注於 <strong>深度學習、電腦視覺與嵌入式系統</strong>。研究經歷涵蓋深度視訊壓縮、
-      RGB/IR 多模態影像融合、Edge AI 部署與即時作業系統核心層實作。
+      專注於 <strong>深度學習、電腦視覺與嵌入式系統</strong>。
+      研究與開發經歷涵蓋深度視訊壓縮、RGB/IR 多模態影像融合、
+      Edge AI 部署與 RTOS 核心層實作。
+      習慣從資料流與模組介面拆解問題，將演算法延伸至完整系統整合與部署。
     </p>
 
     <div class="hero-actions">
@@ -166,24 +168,6 @@ layout: default
       <h3>Academic Excellence</h3>
       <p><strong>Graduate coursework GPA 3.96 / 4.3</strong> · Feng Chia University Academic Excellence Award。</p>
     </div>
-  </div>
-</section>
-
-<section id="about" class="section-block two-col">
-  <div>
-    <div class="section-kicker">ABOUT</div>
-    <h2>從演算法到系統部署</h2>
-  </div>
-  <div class="about-copy">
-    <p>
-      畢業於國立臺灣科技大學電機工程研究所。
-      大學期間從自動控制與嵌入式系統出發，逐步接觸電腦視覺與影像處理；研究所則進一步投入深度學習式視訊壓縮研究。
-    </p>
-    <p>
-      習慣從整體系統角度理解問題。無論是模型訓練異常、跨模態影像錯位，或 RTOS 排程行為，
-      都會先拆解資料流與模組介面，透過中間結果與對照實驗逐步定位原因。
-      團隊專案與產學合作也讓我學習到：完成自己的模組之外，更需要理解其他子系統的限制並共同整合。
-    </p>
   </div>
 </section>
 
