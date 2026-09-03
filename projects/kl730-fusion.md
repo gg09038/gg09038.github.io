@@ -3,7 +3,7 @@ layout: project
 title: "多模態 RGB/IR 即時影像融合系統"
 kicker: "Industry Collaboration · Embedded AI"
 subtitle: "Depth-indexed Homography for RGB/Thermal alignment with ToF sensing and KL730 deployment"
-hero: "/assets/img/projects/kl730/rgbir-ai.png"
+hero: "/assets/img/projects/kl730/cat.png"
 tags: ["Computer Vision", "RGB/IR Fusion", "Homography", "ToF", "KL730", "C++"]
 metrics:
   - label: "Platform"
@@ -23,6 +23,31 @@ permalink: /projects/kl730-fusion/
 
 RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接疊合會產生視差錯位；而單一固定 Homography 只對特定距離有效，物體景深改變後對位品質會明顯下降。
 
+<figure>
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    style="width:100%;height:auto;">
+
+    <source
+      src="{{ '/assets/img/projects/kl730/kl730-rgbir-demo.webm' | relative_url }}"
+      type="video/webm">
+
+    <source
+      src="{{ '/assets/img/projects/kl730/kl730-rgbir-demo.mp4' | relative_url }}"
+      type="video/mp4">
+
+    Your browser does not support the video tag.
+  </video>
+
+  <figcaption>
+    直接疊合會產生明顯視差錯位
+  </figcaption>
+</figure>
+
 ## Method
 
 1. 在多個前景距離蒐集成對 RGB / Thermal 影像。
@@ -31,7 +56,16 @@ RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接�
 4. 系統運作時利用 **ToF** 即時量測距離，選擇對應的投影映射矩陣。
 5. 完成透視轉換、影像融合與顯示，並整合 AI 物件辨識。
 
-![RGB/IR/ToF 系統流程](/assets/img/projects/kl730/fusion-flow.png)
+<figure>
+  <img
+    src="{{ '/assets/img/projects/kl730/fusion-flow.png' | relative_url }}"
+    alt="RGB、IR 與 ToF 即時影像融合系統流程"
+    loading="lazy"
+    style="width:100%;height:auto;">
+  <figcaption>
+    RGB / Thermal / ToF 系統流程。ToF 提供即時距離資訊，系統依據深度選擇對應 Homography Matrix，完成跨模態影像對位、融合與 AI inference。
+  </figcaption>
+</figure>
 
 ## Embedded Deployment
 
@@ -44,6 +78,33 @@ RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接�
 - AI Object Detection
 - 外部控制與顯示介面
 
+<figure>
+  <img
+    src="{{ '/assets/img/projects/kl730/sys.webp' | relative_url }}"
+    alt="KL730 邊緣運算平台與 RGB、Thermal、ToF 感測器整合"
+    loading="lazy"
+    style="width:100%;height:auto;">
+  <figcaption>
+    KL730 邊緣運算平台與 RGB、Thermal、ToF 感測器整合。
+  </figcaption>
+</figure>
+
+## Demo
+
+以下為室外／動態場景的實際成果展示：
+
+<div style="position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px;">
+  <iframe
+    src="https://www.youtube.com/embed/cx5LC9ij29A"
+    title="RGB/IR Fusion System Demo"
+    style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"
+    loading="lazy"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## Engineering Challenges
 
 - 處理 RGB 與 IR 視角差異、尺度差異與多距離視差。
@@ -53,4 +114,4 @@ RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接�
 
 ## Result
 
-完成從資料蒐集、跨模態標定、深度索引矩陣建立，到 KL730 即時融合與 AI 辨識的完整系統原型。此專案讓我進一步理解演算法從 PC 開發環境走向實際嵌入式硬體時的效能、介面與資料流限制。
+完成從資料蒐集、跨模態標定、深度索引矩陣建立，到 KL730 即時融合與 AI 辨識的完整系統原型。在專案過程中理解演算法從 PC 開發環境走向實際嵌入式硬體時的效能、介面與資料流限制。

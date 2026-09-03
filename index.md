@@ -6,38 +6,51 @@ layout: default
 <section class="hero-modern">
   <div class="hero-copy">
     <div class="eyebrow">M.S. in Electrical Engineering · NTUST</div>
-    <h1>楊宗諺 <span>Tsung-Yen Yang</span></h1>
+
+    <h1>
+      楊宗諺
+      <span>Tsung-Yen Yang</span>
+    </h1>
+
     <p class="hero-lead">
       專注於 <strong>深度學習、電腦視覺與嵌入式系統</strong>。研究經歷涵蓋深度視訊壓縮、
       RGB/IR 多模態影像融合、Edge AI 部署與即時作業系統核心層實作。
     </p>
+
     <div class="hero-actions">
-      <a class="btn primary" href="{{ '/projects/' | relative_url }}">查看專案</a>
-      <a class="btn" href="mailto:as0903817384@gmail.com">聯絡我</a>
-      <a class="btn ghost" href="https://github.com/gg09038" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn primary" href="{{ '/projects/' | relative_url }}">
+        查看專案
+      </a>
+
+      <a class="btn" href="mailto:as0903817384@gmail.com">
+        聯絡我
+      </a>
+
+      <a
+        class="btn ghost"
+        href="https://github.com/gg09038"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub ↗
+      </a>
     </div>
+
     <div class="hero-chips">
-      <span>Algorithm</span><span>Computer Vision</span><span>Embedded AI</span><span>RTOS</span>
+      <span>Algorithm</span>
+      <span>Computer Vision</span>
+      <span>Embedded AI</span>
+      <span>RTOS</span>
     </div>
   </div>
 
-  <aside class="hero-panel">
-    <div class="profile-monogram">TY</div>
-    <div class="profile-title">工程型研究者</div>
-    <p>從模型研究、系統整合到硬體部署，習慣以資料流與實驗驗證定位問題。</p>
-    <dl class="quick-facts">
-      <div><dt>Education</dt><dd>NTUST EE M.S.</dd></div>
-      <div><dt>Background</dt><dd>Automatic Control</dd></div>
-      <div><dt>Focus</dt><dd>AI / CV / Embedded</dd></div>
-    </dl>
-  </aside>
-</section>
-
-<section class="impact-strip" aria-label="portfolio highlights">
-  <div><span class="impact-number">44.91%</span><span class="impact-label">P-frame 平均碼率節省<br>vs. HEVC</span></div>
-  <div><span class="impact-number">+2.39–2.61 dB</span><span class="impact-label">單一模型 PSNR<br>操作範圍拓展</span></div>
-  <div><span class="impact-number">IEEE</span><span class="impact-label">大學專題成果<br>論文發表</span></div>
-  <div><span class="impact-number">Kernel</span><span class="impact-label">μC/OS-II<br>排程器實作</span></div>
+  <div class="hero-photo-wrap">
+    <img
+      class="hero-photo"
+      src="{{ '/assets/img/profile/profile.webp' | relative_url }}"
+      alt="楊宗諺 Tsung-Yen Yang"
+    >
+  </div>
 </section>
 
 <section id="about" class="section-block two-col">
@@ -47,11 +60,11 @@ layout: default
   </div>
   <div class="about-copy">
     <p>
-      我畢業於逢甲大學自動控制工程學系，目前就讀國立臺灣科技大學電機工程研究所。
+      我畢業於國立臺灣科技大學電機工程研究所。
       大學期間從自動控制與嵌入式系統出發，逐步接觸電腦視覺與影像處理；研究所則進一步投入深度學習式視訊壓縮研究。
     </p>
     <p>
-      我習慣從整體系統角度理解問題。無論是模型訓練異常、跨模態影像錯位，或 RTOS 排程行為，
+      習慣從整體系統角度理解問題。無論是模型訓練異常、跨模態影像錯位，或 RTOS 排程行為，
       都會先拆解資料流與模組介面，再透過中間結果與對照實驗逐步定位原因。
       團隊專案與產學合作也讓我學習到：完成自己的模組之外，更需要理解其他子系統的限制並共同整合。
     </p>
@@ -76,7 +89,7 @@ layout: default
       <div class="timeline-date">2020.09 — 2024.06</div>
       <div class="timeline-content">
         <h3>逢甲大學 · 自動控制工程學系</h3>
-        <p>自動控制、電腦視覺、嵌入式控制與系統整合；大學專題成果完成 IEEE 論文發表。</p>
+        <p>自動控制、電腦視覺、嵌入式控制與系統整合；專題完成 IEEE 論文發表。</p>
       </div>
     </div>
   </div>

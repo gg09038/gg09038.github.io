@@ -15,7 +15,7 @@
     value: -44.91%
   - label: All-frame BD-rate vs. HEVC
     value: -37.73%
-  - label: PSNR operating range
+  - label: PSNR operating-range expansion
     value: +2.39–2.61 dB
   period: 2025.03 — 2026.08
 - id: kl730

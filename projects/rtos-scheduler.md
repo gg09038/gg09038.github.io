@@ -17,7 +17,7 @@ permalink: /projects/rtos-scheduler/
 
 # μC/OS-II 即時排程與核心層實作
 
-> **一句話摘要**：直接修改 μC/OS-II 核心層程式碼，實作與分析多種即時排程器、deadline handling、TCB linked list 與共享資源協定。
+> **一句話摘要**：修改 μC/OS-II 核心層程式碼，實作與分析多種即時排程器、deadline handling、TCB linked list 與共享資源協定。
 
 ## Scope
 
