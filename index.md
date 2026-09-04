@@ -217,7 +217,7 @@ layout: default
       <div class="timeline-date">2024 — 2026</div>
       <div class="timeline-content">
         <h3>National Taiwan University of Science and Technology</h3>
-        <p><strong>M.S. Electrical Engineering · 2024–2026</strong></p>
+        <p><strong>M.S. Electrical Engineering</strong></p>
         <p>Deep Video Compression / Computer Vision / Embedded Systems</p>
         <p><strong>Graduate coursework GPA: 3.96 / 4.3</strong></p>
       </div>
@@ -228,7 +228,7 @@ layout: default
       <div class="timeline-date">2020 — 2024</div>
       <div class="timeline-content">
         <h3>Feng Chia University</h3>
-        <p><strong>B.S. Automatic Control Engineering · 2020–2024</strong></p>
+        <p><strong>B.S. Automatic Control Engineering</strong></p>
         <p><strong>GPA: 3.60 / 4.3 · Top 20% · Academic Excellence Award</strong></p>
       </div>
     </div>
