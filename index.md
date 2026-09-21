@@ -26,15 +26,6 @@ layout: default
       <a class="btn" href="mailto:as0903817384@gmail.com">
         聯絡我
       </a>
-
-      <a
-        class="btn ghost"
-        href="https://github.com/gg09038"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub ↗
-      </a>
     </div>
 
     <div class="hero-chips">
