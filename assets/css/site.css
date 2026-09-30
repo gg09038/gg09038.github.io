@@ -110,6 +110,7 @@ button{font:inherit}
 .project-card-body{padding:20px}
 .project-card h3{font-size:20px;line-height:1.35;margin:6px 0 8px}.project-card p{margin:0 0 14px;color:var(--muted);font-size:14px}
 .tags{display:flex;gap:7px;flex-wrap:wrap}.tags.compact .tag{font-size:11px;padding:4px 8px}
+.project-status{margin:-4px 0 14px}.project-status .tag{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 32%,var(--line));color:var(--accent);font-weight:800}
 .mini-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}
 .mini-metrics div{background:var(--surface-2);border-radius:10px;padding:9px}
 .mini-metrics span{display:block;color:var(--muted);font-size:10px;line-height:1.3}.mini-metrics strong{display:block;font-size:13px;margin-top:2px}
