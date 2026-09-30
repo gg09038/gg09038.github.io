@@ -146,7 +146,7 @@ layout: default
 
     <div class="skill-card">
       <h3>Embedded AI Deployment</h3>
-      <p>完成 <strong>RGB / Thermal / ToF</strong> 多模態影像融合，並部署於 <strong>KL730</strong> Edge AI 平台。</p>
+      <p>完成 <strong>RGB / Thermal / ToF</strong> 多模態影像融合，並部署於 <strong>KL730</strong> Edge AI 平台。相關成果投稿至 IEEE Transactions on Consumer Electronics。</p>
     </div>
 
     <div class="skill-card">
