@@ -21,7 +21,8 @@ permalink: /projects/kl730-fusion/
 
 **合作單位：** 國立臺灣科技大學 × 全科科技  
 **專案性質：** Industry Collaboration / Embedded AI  
-**開發期間：** 2025.01–2026.01
+**開發期間：** 2025.01–2026.01  
+**研究狀態：** RGB / Thermal image alignment and fusion manuscript submitted to *IEEE Transactions on Consumer Electronics* (under review)
 
 本系統為「多功能熱影像重疊智慧傳輸模組」產學合作開發成果之一，
 目標是在 KL730 邊緣平台整合 RGB、Thermal 與 ToF 感測資訊，
@@ -123,3 +124,5 @@ RGB 與熱像相機因鏡頭視角、安裝位置與影像尺度不同，直接�
 ## Result
 
 完成從資料蒐集、跨模態標定、深度索引矩陣建立，到 KL730 即時融合與 AI 辨識的完整系統原型。在專案過程中理解演算法從 PC 開發環境走向實際嵌入式硬體時的效能、介面與資料流限制。
+
+其中 RGB / Thermal 跨模態影像對位與融合相關研究成果已整理為論文，並投稿至 *IEEE Transactions on Consumer Electronics*，目前審查中（under review）。
