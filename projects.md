@@ -18,6 +18,9 @@ permalink: /projects/
         <div class="project-meta-line"><span class="project-category">{{ p.category }}</span><span class="project-period">{{ p.period }}</span></div>
         <h3>{{ p.title }}</h3>
         <p>{{ p.subtitle }}</p>
+        {% if p.status %}
+          <div class="project-status"><span class="tag">{{ p.status }}</span></div>
+        {% endif %}
         {% if p.metrics %}
         <div class="mini-metrics">
           {% for m in p.metrics limit:2 %}
