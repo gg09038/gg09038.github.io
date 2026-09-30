@@ -241,11 +241,9 @@ layout: default
           <div class="project-meta-line"><span class="project-category">{{ p.category }}</span><span class="project-period">{{ p.period }}</span></div>
           <h3>{{ p.title }}</h3>
           <p>{{ p.subtitle }}</p>
-          {% if p.status %}
-            <div class="project-status"><span class="tag">{{ p.status }}</span></div>
-          {% endif %}
           <div class="tags compact">
-            {% for t in p.tags limit:4 %}<span class="tag">{{ t }}</span>{% endfor %}
+            {% for t in p.tags limit:5 %}<span class="tag">{{ t }}</span>{% endfor %}
+            {% if p.status %}<span class="tag">{{ p.status }}</span>{% endif %}
           </div>
         </div>
       </a>
